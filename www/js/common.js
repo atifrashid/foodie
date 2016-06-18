@@ -89,7 +89,7 @@ function ajaxError(  jqXHR, textStatus, errorThrown ){
 	} else {
 		M = 'Uncaught Error ' + jqXHR.textStatus;
 	}
-
+	//alert(M);
 	BAlert.find('.modal-header h3').html('<i class="fa fa-exclamation-triangle"></i> '+cLan.Error);
 	BAlert.find('.modal-body').html('<p class="text-danger">'+M+'</p>');
 	BAlert.modal();	
@@ -203,7 +203,15 @@ $(document).ready(function(e) {
 			$(".fa").toggleClass('fa-bars fa-remove');
 			$(this).toggleClass('toggle-button');		
 	});	
-    
+	
+	$('a').on('click',function(e){
+		var href = $(this).prop('href');
+		if( href.length > 4 ){
+			document.location = href; 
+			e.preventDefault();	
+		}
+	});
+	
  // Switch Click
 	$('.Switch').click(function() {
 		// Check If Enabled (Has 'On' Class)

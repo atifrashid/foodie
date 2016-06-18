@@ -55,15 +55,16 @@ $(document).ready(function() {
     }
 
     if( window.isphone ) {
-        document.addEventListener("deviceready", onDeviceReady, false);
+		document.addEventListener("deviceready", onDeviceReady, false);
     } else {
-        onDeviceReady();
+		onDeviceReady();
     }
 });
 
 
 function onDeviceReady() {
 	setTimeout(function(){ 
+		//$('#bottom-bar').html($('#bottom-bar').html()+'ready out');
 		//onShortError({code:-1});
 		navigator.geolocation.getCurrentPosition(showPosition, onShortError, { maximumAge: 3000, timeout: 5000, enableHighAccuracy:true });
 	}, 1000);
@@ -107,10 +108,13 @@ function showPosition(position) {
 	
 		localStorage.setItem('lat', lat );
 		localStorage.setItem('lng', lng );
-		
+		//alert('xxxxxx');
 		if( empty(localStorage.getItem('userId'))){
+			//document.location.href = './register.html';
 			setTimeout(function(){ document.location = 'register.html'; }, 500);
 		}else{
+			//document.location.href = './map.html';
+			//document.location.href = './register.html';
 			setTimeout(function(){ document.location = 'map.html'; }, 500);
 			//setTimeout(function(){ document.location = 'register.html'; }, 500);	
 		}

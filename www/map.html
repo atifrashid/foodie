@@ -165,7 +165,7 @@ to {
 <script src="cordova.js"></script> 
 <script src="js/jquery-1.11.3.min.js"></script> 
 <script src="js/bootstrap.min.js"></script> 
-<script src="http://maps.google.com/maps/api/js?key=AIzaSyBrGQ3WXjDyt6lu6OLS4RDNBXYb3Wr-l_Y"></script> 
+<script src="http://maps.google.com/maps/api/js?key=AIzaSyBrGQ3WXjDyt6lu6OLS4RDNBXYb3Wr-l_Y"></script>
 <script src='js/knockout-3.4.0.js'></script> 
 <script src="js/common.js"></script> 
 <script>
@@ -298,12 +298,15 @@ $(document).ready(function(e) {
 	});
 	
 	var formData = 'lat='+localStorage.getItem("lat")+'&lng='+localStorage.getItem("lng")+'&user_id='+localStorage.getItem("userId")+'&app_token='+localStorage.getItem("userToken");
+		
 	$.ajax({
-		type: "POST", dataType: 'json', url: ServerAjax+"?h=initApp",
-		data: formData,
+		type: "POST", dataType: 'json', url: ServerAjax+"?h=initApp", data: formData,
+		//beforeSend: function() { waitingDialog.show(cLan.Loading, {dialogSize: 'sm', progressType: 'info'}); },
+		//complete: function() { waitingDialog.hide(); },
 	}).fail(  ajaxError )
 	.done(function(data){
 		if (data.Success == 'true') {
+			
 			//console.log(data.Chefs);
 			localStorage.setItem('nearbyChefs', data.nearbyChefs );
 			localStorage.setItem('nearbyChefsCount', data.nearbyChefsCount );
