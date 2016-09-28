@@ -10,7 +10,8 @@
     <allow-navigation href="https://*/*" />
     <allow-navigation href="http://mobileapi.foodiesys.com/*" />
     <allow-navigation href="data:*" />
-    <preference name="phonegap-version" value="cli-6.1.0" />
+    
+	<preference name="phonegap-version" value="cli-6.3.0" />
     <preference name="AndroidPersistentFileLocation" value="Compatibility" />
     <preference name="android-minSdkVersion" value="17" />
     <preference name="android-targetSdkVersion" value="23" />
