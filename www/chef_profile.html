@@ -44,22 +44,26 @@
 <div id="sidebar-wrapper">
 	<nav id="nav">
 		<ul class="sidebar-nav nav" id="navRight">
-			<li class="menu-heading"><strong><a href="#" data-bind="text: lang.Foodie"></a></strong></li>
-			<li><a class="sub" href="map.html" data-bind="text: lang.Chefs"></a></li>
-			<li><a class="sub" href="user-profile.html" data-bind="text: lang.MyProfile"></a></li>
-			<li><a class="sub" href="payment-options.html" data-bind="text: lang.PO"></a></li>
-			<li><a class="sub" href="reservations.html" data-bind="text: lang.MyOrders"></a></li>
-			<li><a class="sub" href="notifications.html" data-bind="text: lang.Notifications"></a></li>
-			<li class="menu-heading"><strong><a data-bind="text: lang.CHEF" href="#"></a></strong></li>
-			<li class="noChef"><a class="sub" data-bind="text: lang.BecomeaChef" href="chef-profile-edit.html"></a></li>
-			<li class="isChef pChef"><a class="sub" data-bind="text: lang.ChefProfile" href="chef-profile-edit.html"></a></li>
-			<li class="isChef"><a class="sub" data-bind="text: lang.ManageDishes" href="chef-dishes.html"></a></li>
-			<li class="isChef"><a class="sub" data-bind="text: lang.Schedule" href="chef-calendar-set.html"></a></li>
-			<li class="isChef"><a class="sub" data-bind="text: lang.DeliverySchedule" href="delivery-schedule.html"></a></li>
-			<li class="isChef"><a class="sub" data-bind="text: lang.ChefReservations" href="chef-reservations.html"></a></li>
-			<li><a  href="settings.html" data-bind="text: lang.Settings"></a></li>
-			<li><a href="about.html" data-bind="text: lang.AboutFudi"></a></li>
-			<li><a href="register.html?do=logout" data-bind="text: lang.Logout"></a></li>
+			<li class="L0 menu-heading"><strong><a href="#"><i class="icon-user"></i> <span data-bind="text: lang.Foodie"></span></a></strong></li>
+			<li class="L2"><a class="sub" href="map.html"><i class="icon-pointer-advice"></i> <span data-bind="text: lang.mnuChefs"></span></a></li>
+			<li class="L2"><a class="sub" href="user-profile.html"><i class="icon-user"></i> <span data-bind="text: lang.MyProfile"></span></a></li>
+			<li class="L2"><a class="sub" href="payment-options.html"><i class="icon-credit-cards"></i> <span data-bind="text: lang.PO"></span></a></li>
+			<li class="L2"><a class="sub" href="reservations.html"><i class="icon-tray"></i> <span data-bind="text: lang.MyOrders"></span></a></li>
+			<li class="L2"><a class="sub" href="notifications.html"><i class="icon-mail"></i> <span data-bind="text: lang.Notifications"></span></a></li>
+			<li class="L2"><a class="sub" href="events-list.html"><i class="fa fa-glass"></i> <span data-bind="text: lang.Events"></span></a></li>
+			<li class="L0 menu-heading"><strong><a href="#"><i class="icon-chef"></i> <span data-bind="text: lang.CHEF"></span></a></strong></li>
+			<li class="L2 noChef"><a class="sub" href="chef-profile-edit.html"><i class="icon-chef"></i> <span data-bind="text: lang.BecomeaChef"></span></a></li>
+			<li class="L2 isChef pChef"><a class="sub" href="chef-profile-edit.html"><i class="icon-chef"></i> <span data-bind="text: lang.ChefProfile"></span></a></li>
+			<li class="L2 isChef"><a class="sub" href="chef-dishes.html"><i class="icon-food"></i> <span data-bind="text: lang.ManageDishes"></span></a></li>
+			<li class="L2 isChef"><a class="sub" href="chef-calendar-set.html"><i class="icon-clock"></i> <span data-bind="text: lang.Schedule"></span></a></li>
+			<li class="L2 isChef"><a class="sub" href="delivery-schedule.html"><i class="icon-calendar"></i> <span data-bind="text: lang.DeliverySchedule"></span></a></li>
+			<li class="L2 isChef"><a class="sub" href="ps-schedule.html"><i class="icon-calendar-1"></i> <span data-bind="text: lang.PSmenu"></span></a></li>
+			<li class="L2 isChef"><a class="sub" href="chef-reservations.html"><i class="icon-reserve"></i> <span data-bind="text: lang.ChefReservations"></span></a></li>
+			<li class="L2 isChef"><a class="sub" href="chef-events.html"><i class="fa fa-glass"></i> <span data-bind="text: lang.eventResv"></span></a></li>
+			<li class="L2 isChef"><a class="sub" href="withdraw-money-chef.html"><i class="icon-withdraw"></i> <span data-bind="text: lang.WithdMon"></span></a></li>
+			<li class="L1"><a href="settings.html"><i class="icon-gear"></i> <span data-bind="text: lang.Settings"></span></a></li>
+			<li class="L1"><a href="about.html"><i class="icon-about"></i> <span data-bind="text: lang.AboutFudi"></span></a></li>
+			<li class="L1"><a href="register.html?do=logout"><i class="icon-logout"></i> <span data-bind="text: lang.Logout"></span></a></li>
 		</ul>
 	</nav>
 </div>
@@ -89,7 +93,12 @@
 						
 						<!-- Left and right controls --> 
 						<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev"> <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> <span class="sr-only">Previous</span> </a> <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next"> <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> <span class="sr-only">Next</span> </a> </div>
-					<div class="order-button"> <span class="spantxt1"><a href="#" data-bind="text: lang.DineInOrder" id="btnStartOrder">Dine in order</a></span> <span class="spantxt2"><a href="#" data-bind="text: lang.DlvOdr" id="btnStartDeliveryOrder">Delivery Order</a></span> </div>
+					<div class="order-button"> 
+						<span id="spBtnDine" style="display:none" class="spantxt1"><a href="#" data-bind="text: lang.DineInOrder" id="btnStartOrder">Dine in order</a></span> 
+						<span id="spBtnDelivery" style="display:none" class="spantxt2"><a href="#" data-bind="text: lang.DlvOdr" id="btnStartDeliveryOrder">Delivery Order</a></span>
+						<span id="spBtnPS" style="display:none" class="spantxt1"><a href="#" xdata-bind="text: lang.DlvOdr" id="btnStartPSOrder">Personal Chef</a></span>
+					
+					 </div>
 				</div>
 			</div>
 		</div>
@@ -291,6 +300,81 @@
 		</div>
 	</div>
 </div>
+
+<div class="modal fade" id="popPSOrder" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" xdata-bind="text: lang.DeliveryOrder">Personal Chef</h4>
+			</div>
+			<div class="modal-body">
+				<form method="post" id="frmReserve3">
+					<div id="StepPS1">
+						<div class="form-group">
+							<label _data-bind="text: lang.Time">Additional location info <span class="small">(such as Apt or Suite)</span> </label>
+							<div class="">
+								<textarea name="PS_address" id="PS_address" class="form-control" rows="2"></textarea>
+							</div>
+						</div>
+						<div class="form-group">
+							<label data-bind="text: lang.Pickadate"></label>
+							<div style="overflow:hidden; border:2px solid #DDD; padding:5px 5px 0 5px" >
+								<div class="form-group">
+									<div class="row">
+										<div class="col-md-8">
+											<div id="datetimepickerPS"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<input type="hidden" name="PS_date" id="PS_date" value="" />
+						</div>
+						<div class="form-group">
+							<label data-bind="text: lang.Time">Time</label>
+							<div class="">
+								<select name="PS_time" id="PS_time" class="form-control required">
+									<option data-bind="text: lang.SelectTime" value=""></option>
+								</select>
+							</div>
+						</div>
+						
+						<div class="form-group" id="dvReqByChef">
+							<label _data-bind="text: lang.Time">Requirments for Foodie:</label>
+							<p>A stove, burner, fring pan, shelter</p>
+						</div>
+						
+					</div>
+					<div id="StepPS2">
+						<h4  data-bind="text: lang.SelectDishes"></h4>
+						<div id="spAvDishesPS">
+							<ul class="list-group">
+							</ul>
+						</div>
+						
+						<div class="form-group">
+							<label _data-bind="text: lang.Time">Additional Stay (hours)</label>
+							<div class="">
+								<input type="number" id="additionalStay" name="additionalStay" class="form-control" value="0" />
+							</div>
+						</div>
+						<h4 style="color:#666; display:none" id="h4Ad"><span xdata-bind="text: lang.Deliverycharges2">Additional Stay Charges</span> : <span id="PS_Adcharges">$0.00</span></h4>
+						<h4 style="color:#666"><span xdata-bind="text: lang.Deliverycharges2">Travel Charges</span> : <span id="PS_charges">$0.00</span></h4>
+						<h2 style="color:#C00"><span data-bind="text: lang.Total"></span> : <span id="PS_total">$0.00</span></h2>
+					</div>
+					<input type="hidden" id="hPS_charges" name="hPS_charges">
+					<input type="hidden" id="gPSAddress" name="gPSAddress">
+				</form>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal" data-bind="text: lang.Cancel"></button>
+				<button id="btnNextPS" type="button" class="btn btn-primary"><span data-bind="text: lang.Next">Next</span> <i class="fa fa-arrow-circle-o-right"></i></button>
+				<button id="btnOrderPS" type="button" class="btn btn-primary" data-bind="text: lang.OrderNow">Order Now</button>
+			</div>
+		</div>
+	</div>
+</div>
+
 <div class="modal modal-fullscreen fade" id="popDeliveryOrder" tabindex="-1" role="dialog" aria-hidden="true">
 	<div class="modal-dialog" style="height:100%; width:100%;">
 		<div class="modal-content " style="height:100%; width:100%;">
@@ -303,12 +387,13 @@
 <div id="bottom-bar">
 	<div class="container">
 		<div class="row"> <span id="footerLinksNormal">
-			<div class="col-xs-4 no-padding"> <a class="tab-item" href="map.html"> <img class="tab-icon" src="images/map-icon.png" alt="map-icon"> <i class="fa fa-map-o tab"></i> <img class="border-image" src="images/border-image.png" alt="border-image"> </a> </div>
-			<div class="col-xs-4 no-padding"> <a class="tab-item" href="reservations.html"> <img class="tab-icon" src="images/food-icon.png" alt="food-icon"> <img class="border-image" src="images/border-image.png" alt="border-image"> </a> </div>
-			<div class="col-xs-4 no-padding"> <a class="tab-item active" href="user-profile.html"> <img class="tab-icon" src="images/profile-icon.png" alt="map-icon"> </a> </div>
+				<div class="col-xs-3 no-padding"> <a class="tab-item " href="map.html"> <i class="icon-map"></i> </a> </div>
+				<div class="col-xs-3 no-padding"> <a class="tab-item " href="reservations.html"> <i class="icon-bell-covering-hot-dish"></i> </a> </div>
+				<div class="col-xs-3 no-padding"> <a class="tab-item active" href="user-profile.html"> <i class="icon-user-1"></i> </a> </div>
+				<div class="col-xs-3 no-padding"> <a class="tab-item " id="anoti" href="notifications.html"> <i class="icon-alarm"></i> </a>	</div>
 			</span> <span id="footerLinksNoLogin">
-			<div class="col-xs-6 no-padding"> <a class="tab-item active" href="map.html"> <img class="tab-icon" src="images/map-icon.png" alt="map-icon"> <i class="fa fa-map-o tab"></i> <img class="border-image" src="images/border-image.png" alt="border-image"> </a> </div>
-			<div class="col-xs-6 no-padding"> <a class="tab-item" href="register.html"> <img class="tab-icon" src="images/profile-icon.png" alt="map-icon"> </a> </div>
+				<div class="col-xs-6 no-padding"> <a class="tab-item " href="register.html"> <i class="icon-user-1"></i> </a> </div>
+				<div class="col-xs-6 no-padding"> <a class="tab-item " href="map.html"> <i class="icon-map"></i> </a> </div>
 			</span> </div>
 	</div>
 </div>
@@ -345,7 +430,8 @@ var myLatLng;
 var controlDiv2;	// Set Delivery Location button
 var controlDiv4;  // geo Address;
 var geocoder ;
-
+var OrderType = null;
+var ps_additional_per_h = 0;
 
 function MyControl(controlDiv, map) {
 	var controlImg = document.createElement('IMG');
@@ -380,6 +466,9 @@ function MyControl2(controlDiv, mapp) {
 	controlText.style.paddingLeft = '8px';
 	controlText.style.paddingRight = '8px';
 	controlText.innerHTML = 'Set Delivery Location <img src="images/arrow.png" width="18" height="18" />';
+	
+	if( OrderType == 'PS' ) controlText.innerHTML = 'Set Cooking Location <img src="images/arrow.png" width="18" height="18" />';
+	
 	controlUI.appendChild(controlText);
 	
 	// Setup the click event listeners: simply set the map to Chicago.
@@ -390,7 +479,12 @@ function MyControl2(controlDiv, mapp) {
 			localStorage.setItem('Deliverylat', Tmp.lat());
 			localStorage.setItem('Deliverylng', Tmp.lng());
 			console.log(map.getCenter().toString());
-			get_chefDeliverySettings();
+			
+			if( OrderType == 'PS' )
+				get_chefPSSettings();
+			else
+				get_chefDeliverySettings();
+				
      	}, 800);
 	});
 }
@@ -585,7 +679,11 @@ $(document).ready(function(e) {
 		$('#p_rating').prop('src', obRat['starImg'] );
 		$('#rating_text').html( obRat['ratingTxt'] );
 		
+		
+		
 	}
+	
+	loadDishes(chef_id);
 	
 	$('#spReview a').on('click',function(){
 		
@@ -599,6 +697,11 @@ $(document).ready(function(e) {
 		format: 'YYYY-MM-DD'
 	});	
 	
+	$('#datetimepickerPS').datetimepicker({
+		inline: true,
+		sideBySide: false,
+		format: 'YYYY-MM-DD'
+	});	
 	
 	$('#datetimepicker12').datetimepicker({
 		inline: true,
@@ -625,6 +728,24 @@ $(document).ready(function(e) {
 		}
 	});
 	
+	$('#datetimepickerPS').on('dp.change', function(m) {
+		var sd = m.date.format("YYYY-MM-DD");
+		thisDate = sd;
+		console.log( DishAvO2[sd] );
+		$('#PS_time').find("option:gt(0)").remove();
+		
+		var st = parseInt(moment(DishAvO2[sd].start_time,'HH:mm:ss').format('H'));
+		var en = parseInt(moment(DishAvO2[sd].end_time,'HH:mm:ss').format('H'));
+		
+		if( en == 0 ){ en = 24; }  
+				
+		while( st < en ){
+			mm = moment(st,'H');
+			$('#PS_time').append('<option value="'+ mm.format('HH:mm:ss') +'">'+ mm.format('hh:00 A')  +'</option>');
+			st+=3;
+		}
+	});
+	
 	$('#datetimepickerD').on('dp.change', function(m) {
 		var sd = m.date.format("YYYY-MM-DD");
 		thisDate = sd;
@@ -644,7 +765,7 @@ $(document).ready(function(e) {
 	});
 	
 	
-	loadDishes(chef_id);
+	
 	
 	
 	$('#btnStartOrder').on('click',function(){
@@ -701,7 +822,40 @@ $(document).ready(function(e) {
 		
 	});
 	
-	
+	$('#btnStartPSOrder').on('click',function(){
+
+				
+		if( empty(localStorage.getItem('userId'))){
+			BAlert.find('.modal-header h3').html('<i class="fa fa-exclamation-triangle"></i> Error');
+			BAlert.find('.modal-body').html('<p class="text-danger">'+cLan.Pleaselogin+' <a href="register.html?ret='+chef_id+'">'+cLan.HERE+'</a> '+cLan.tologinregister+'</p>');
+			BAlert.modal();
+			return false;
+		}
+		
+		var user_profile_complete = false;
+		if( !empty(localStorage.getItem('userData'))){
+			var userData = JSON.parse(localStorage.getItem('userData'));
+			if( !empty(userData.first_name) && !empty(userData.last_name) && !empty(userData.phone)  ){
+				user_profile_complete = true;	
+			}
+		}
+		if( user_profile_complete == false ){
+			BAlert.find('.modal-header h3').html('<i class="fa fa-exclamation-triangle"></i> '+cLan.Error);
+			BAlert.find('.modal-body').html('<p class="text-danger">'+cLan.Pleasetap+' <a href="user-profile.html?ret='+chef_id+'">'+cLan.HERE+'</a> '+cLan.tocompleteprofile+'</p>');
+			BAlert.modal();
+			return false;
+		}
+		
+		OrderType = 'PS';
+		
+		$('#popDeliveryOrder').modal();
+		
+		setTimeout( function() {
+    		initMap();
+		}, 500);
+		
+		
+	});
 	
 	$('#btnStartDeliveryOrder').on('click',function(){
 		
@@ -728,7 +882,7 @@ $(document).ready(function(e) {
 			return false;
 		}
 		
-		
+		OrderType = 'Delivery';
 		$('#popDeliveryOrder').modal();
 		
 		setTimeout( function() {
@@ -760,13 +914,11 @@ $(".modal-fullscreen").on('hidden.bs.modal', function () {
 		if(!empty(thisDish)){
 			
 			var stat = '';
-			switch(thisDish.availability){
-				case '0':	stat = cLan.DishA0; break;
-				case '1':	stat = cLan.DishA1; break;
-				case '2':	stat = cLan.DishA2; break;
-				case '3':	stat = cLan.DishA3; break;
-				default:		stat = 'N/A';
-			}
+			if( dishData[i].availability & 1 ){ stat += ', '+cLan.DishA1; }
+			if( dishData[i].availability & 2 ){ stat += ', '+cLan.DishA2; }
+			if( dishData[i].availability & 4 ){ stat += ', '+cLan.DishA4; }
+			if( stat == '' ) stat = cLan.DishA0; else stat = stat.substr(2);  
+			
 			var Desc = thisDish.description;
 			var Im = 'http://mobileapi.foodiesys.com/foodie-mssql/pics/'+thisDish.image1;
 			if(empty(thisDish.image1)) Im = 'images/no-pic3.jpg?1';
@@ -809,7 +961,7 @@ $(".modal-fullscreen").on('hidden.bs.modal', function () {
 						if( $.inArray( dishData[i].id, dateDishes ) != -1 ){
 							$('#spAvDishes ul').append('<li class="list-group-item">'+
 								'<input type="checkbox" data-price="'+dishData[i].price+'" data-name="'+dishData[i].dish_name+'" value="'+dishData[i].id+'"> '+dishData[i].dish_name+
-								'<div class="spDishD">'+cLan.Price+' : $'+dishData[i].price+ ' &nbsp; '+cLan.Qty+' : <input id="aQty'+dishData[i].id+'" type="number" value="1" class="input-sm inline" /></div></li>');
+								'<div class="spDishD">'+cLan.Price+' : $'+dishData[i].price+ ' &nbsp; '+cLan.Qty+' : <input id="aQty'+dishData[i].id+'" type="number" value="1" min="1" max="50" class="input-sm inline" /></div></li>');
 						} 
 					}
 					
@@ -850,14 +1002,52 @@ $(".modal-fullscreen").on('hidden.bs.modal', function () {
 					
 					$('#spAvDishes2 ul').empty();
 					for (var i = 0; i < dishData.length; i++) {
-						if(  dishData[i].availability >= 2 ){
+						if(  dishData[i].availability & 2 ){
 							$('#spAvDishes2 ul').append('<li class="list-group-item">'+
 								'<input type="checkbox" data-price="'+dishData[i].price+'" data-name="'+dishData[i].dish_name+'" value="'+dishData[i].id+'"> '+dishData[i].dish_name+
-								'<div class="spDishD">'+cLan.Price+' : $'+dishData[i].price+ ' &nbsp; '+cLan.Qty+' : <input id="aQty'+dishData[i].id+'" type="number" value="1" class="input-sm inline" /></div></li>');
+								'<div class="spDishD">'+cLan.Price+' : $'+dishData[i].price+ ' &nbsp; '+cLan.Qty+' : <input id="aQty'+dishData[i].id+'" type="number" value="1" min="1" max="50" class="input-sm inline" /></div></li>');
 						} 
 					}
 					$('#StepD1').hide(); $('#btnNextD').hide();	
 					$('#StepD2').show(500); $('#btnOrderD').show(500);
+					
+				} else { 
+					ErrorModalWithParm(data);
+				}
+				//if (data.JS) { eval(data.JS); }
+			}); // ajax	
+			
+		}
+	});
+	
+	$('#btnNextPS').on('click',function(){
+		if( !$('#frmReserve3').valid() ) return false;
+		
+		if( empty(thisDate) || empty($('#PS_time').val()) ){
+			BAlert.find('.modal-header h3').html('<i class="fa fa-exclamation-triangle"></i> '+cLan.Error);
+			BAlert.find('.modal-body').html('<p class="text-danger">'+cLan.Pleasepickdatetime+'</p>');
+			BAlert.modal();
+		}else{
+			formData = 'chef_id='+chef_id+'&ps_date='+thisDate+'&ps_time='+$('#PS_time').val();
+			$.ajax({
+				type: "POST", dataType: 'json', url: ServerAjax+"?h=checkPSAvailable", data: formData,
+				beforeSend: function() { waitingDialog.show(cLan.Loading, {dialogSize: 'sm', progressType: 'info'}); },
+				complete: function() { waitingDialog.hide(); },
+			}).fail(  ajaxError )
+			.done(function(data){
+				if (data.Success == 'true') {
+					
+					$('#spAvDishesPS ul').empty();
+					for (var i = 0; i < dishData.length; i++) {
+						if(  dishData[i].availability & 4 ){
+							$('#spAvDishesPS ul').append('<li class="list-group-item">'+
+								'<input type="checkbox" data-price="'+dishData[i].price+'" data-name="'+dishData[i].dish_name+'" value="'+dishData[i].id+'"> '+dishData[i].dish_name+
+								'<div class="spDishD">'+cLan.Price+' : $'+dishData[i].price+ ' &nbsp; '+cLan.Qty+' : <input id="aQtyPS'+dishData[i].id+'" type="number" value="1" min="1" max="50" class="input-sm inline" /></div></li>');
+						} 
+					}
+					$('#StepPS1').hide(); $('#btnNextPS').hide();	
+					$('#StepPS2').show(500); $('#btnOrderPS').show(500);
+					getTotal3();
 					
 				} else { 
 					ErrorModalWithParm(data);
@@ -887,6 +1077,18 @@ $(".modal-fullscreen").on('hidden.bs.modal', function () {
 		getTotal2();
 	});
 	
+	$('#spAvDishesPS').on('change', 'input',function(){
+		if( $(this).is(':checked')){
+			$(this).parent('li').find('.spDishD').show(200);
+		}else{
+			$(this).parent('li').find('.spDishD').hide(150);	
+		}
+		getTotal3();
+	});
+	$('#additionalStay').on('change',function(){
+		getTotal3();	
+	});
+	
 	/*
 	$('#d_quantity').on('change',function(){
 		var t = $('#unit_price').val() * $('#d_quantity').val();
@@ -901,6 +1103,10 @@ $(".modal-fullscreen").on('hidden.bs.modal', function () {
 	
 	$('#btnOrderD').on('click',function(){
 		$('#frmReserve2').submit();
+	});
+	
+	$('#btnOrderPS').on('click',function(){
+		$('#frmReserve3').submit();
 	});
 	
 	$('#frmReserve').validate({
@@ -1031,6 +1237,81 @@ $(".modal-fullscreen").on('hidden.bs.modal', function () {
 		}// submit handler
 	});
 	
+	$('#frmReserve3').validate({
+		errorPlacement: function(error, element) {},
+		submitHandler: function(form) {
+			var dishes = [];
+			Total = 0
+			var travel_charges = parseFloat($('#hPS_charges').val());
+			$('#spAvDishesPS [type=checkbox]').each(function(index, element) {
+				if($(this).is(':checked')){
+					qty = $('#aQtyPS'+$(this).val()).val();
+					dishes.push( {'id':$(this).val(), 'name': $(this).data('name'), 'qty':qty,'price': $(this).data('price') } ); 
+					Total = Total + parseFloat($(this).data('price')) * parseFloat(qty); 
+				}	
+			});
+			
+			var orderType = 'Personal Chef';
+			
+			if( Total == 0 ){
+				BAlert.find('.modal-header h3').html('<i class="fa fa-exclamation-triangle"></i> '+cLan.Error);
+				BAlert.find('.modal-body').html('<p class="text-danger">'+cLan.electdish+'</p>');
+				BAlert.modal();
+				return false;
+			}
+			
+			Total = Total + travel_charges;
+			
+			var Adnl = 0;
+			if( !empty($('#additionalStay').val()) && !empty(ps_additional_per_h) ){
+				Adnl = 	ps_additional_per_h * parseFloat($('#additionalStay').val());
+				Total = Total + Adnl;
+			}
+			$('#PS_address').val()
+			
+			formData = {'chef_id': chef_id, 'date' : thisDate, 'time': $('#PS_time').val(), 'total': Total, 'dishes': dishes, 
+							'orderType' : orderType, 'travel_charges': travel_charges, 'ad_stay':$('#additionalStay').val(), 'ad_stay_charges':Adnl, 'address': $('#PS_address').val(), 'g_address' : $('#gAddress').val(),
+							'lat':localStorage.getItem('Deliverylat'), 'lng':localStorage.getItem('Deliverylng')
+							 };
+			console.log(formData);
+			formData = 'orderType='+orderType+'&jsonData='+JSON.stringify(formData);
+			formData += '&userId='+localStorage.getItem('userId')+'&userToken='+localStorage.getItem('userToken'); 
+			
+			
+			$.ajax({
+				type: "POST", dataType: 'json', url: ServerAjax+"?h=Reserve2", data: formData,
+				beforeSend: function() { waitingDialog.show( cLan.Loading, {dialogSize: 'sm', progressType: 'info'}); },
+				complete: function() { waitingDialog.hide(); },
+			}).fail(  ajaxError )
+			.done(function(data){
+				if (data.Success == 'true') {
+					/**///=========== PayPal ===========
+					try{
+						if(empty(OrderId)){
+							
+							document.location = 'payment-options-select.html?ResId='+data.ResId+'&Amount='+Total;
+							/*
+							OrderId = data.ResId ;
+							ppApp.Amount = Total;
+							ppApp.Description = 'Fudi Reservation '+data.ResId;
+							ppApp.initialize();
+							*/
+						}
+					} catch (err) {
+						alert(err);
+					}
+					/**///=========== /PayPal ==========
+				} else { 
+					ErrorModalWithParm(data);
+				}
+				if (data.JS) { eval(data.JS); }
+			
+			}); // ajax	
+		
+		}// submit handler
+	});
+	
+	
 });
 
 function fb_success(){
@@ -1061,6 +1342,29 @@ function getTotal2(){
 		$('#d_total2').html('$'+Total.toFixed(2));
 	}else{
 		$('#d_total2').html('$0.00');
+	}	
+}
+function getTotal3(){
+	var Total = 0.0;
+	$('#spAvDishesPS [type=checkbox]').each(function(index, element) {
+		if($(this).is(':checked')){
+			Total = Total + $(this).data('price') * $('#aQtyPS'+$(this).val()).val(); 
+		}	
+	});
+	if( Total > 0 ){
+		if( !empty($('#additionalStay').val()) && !empty(ps_additional_per_h) ){
+			var Adnl = 	ps_additional_per_h * parseFloat($('#additionalStay').val());
+			Total = Total + Adnl;
+			$('#PS_Adcharges').html( '$' + Adnl.toFixed(2) );
+			$('#h4Ad').show();
+		}else{
+			$('#h4Ad').hide();
+		}
+		
+		Total = Total + parseFloat($('#hPS_charges').val());
+		$('#PS_total').html('$'+Total.toFixed(2));
+	}else{
+		$('#PS_total').html('$0.00');
 	}	
 }
 
@@ -1103,7 +1407,6 @@ function getReviews(chef_id){
 var chefDeliverySettings = null;
 
 function get_chefDeliverySettings(){ // cloned from loadDishes
-	
 	
 	
 	formData = 'chef_id='+chef_id;
@@ -1178,6 +1481,105 @@ function get_chefDeliverySettings(){ // cloned from loadDishes
 	}); // ajax		
 }
 
+function get_chefPSSettings(){ // cloned from loadDishes
+	
+	formData = 'chef_id='+chef_id;
+	$.ajax({
+		type: "POST", dataType: 'json', url: ServerAjax+"?h=chefPsSettings", data: formData,
+		beforeSend: function() { waitingDialog.show(cLan.Loading, {dialogSize: 'sm', progressType: 'info'}); },
+		complete: function() { waitingDialog.hide(); },
+	}).fail(  ajaxError )
+	.done(function(data){
+		if (data.Success == 'true') {
+			
+			var Dss = distance(localStorage.getItem('Deliverylat'), localStorage.getItem('Deliverylng'), chef_data.lat, chef_data.lng, 'M');
+			console.log(Dss);
+			
+			if(!empty(data.ps_travel_charges)){
+				var ArTab = [[0,0,0],[0,0,0],[0,0,0]];
+				var tmpTbl = data.ps_travel_charges;
+				var rows = tmpTbl.split(';');
+				for(i=0;i<rows.length;i++){
+					var cells = rows[i].split('|');
+					for(j=0;j<cells.length;j++){
+						ArTab[i][j] = parseFloat(cells[j]);
+					}
+				}
+			}
+			
+			if( Dss > ArTab[2][1] ){
+				console.log( 'max distance =' + ArTab[2][1] );
+				BAlert.find('.modal-header h3').html('<i class="fa fa-exclamation-triangle"></i> '+cLan.Error);
+				BAlert.find('.modal-body').html('<p class="text-danger">Your address is outside of the chef\'s service range</p>');
+				BAlert.modal();
+				return false;
+			}
+			
+			if(!empty(data.ps_req_foodie)){
+				$('#dvReqByChef').show();
+				$('#dvReqByChef p').html(data.ps_req_foodie)	
+			}else{
+				$('#dvReqByChef').hide();	
+			}
+			
+			ps_additional_per_h = data.ps_additional_per_h;
+			
+			if(!empty(data.ps_travel_charges)){
+				var Pschg = 0;
+				if( Dss >= ArTab[0][0] && Dss < ArTab[0][1]  ) Pschg = ArTab[0][2];
+				if( Dss >= ArTab[1][0] && Dss < ArTab[1][1]  ) Pschg = ArTab[1][2];
+				if( Dss >= ArTab[2][0] && Dss < ArTab[2][1]  ) Pschg = ArTab[2][2];
+				
+				$('#PS_charges').html('$' + Pschg.toFixed(2) );
+				$('#hPS_charges').val(Pschg.toFixed(2));
+			
+			}else{
+				$('#PS_charges').html('$0.00');
+				$('#hPS_charges').val('0');
+			}
+			
+			
+			var enabledDates = [];
+			DishAv2 = data.DishAv;
+			var defDate = null;
+			if( !empty(DishAv2)){
+				for (var i = 0; i < DishAv2.length; i++) {
+					mo = moment(DishAv2[i].cal_date, 'YYYY-MM-DD');
+					if( mo.isAfter(moment()) || mo.isSame(moment(),'day')  ){
+						if(empty(defDate)){ defDate = DishAv2[i].cal_date };
+						enabledDates.push(DishAv2[i].cal_date);
+						DishAvO2[DishAv2[i].cal_date] = { 'date': DishAv2[i].cal_date, 'start_time': DishAv2[i].start_time, 'end_time': DishAv2[i].end_time };
+					}
+				}
+			}
+			if(empty(enabledDates)){
+				BAlert.find('.modal-header h3').html('<i class="fa fa-exclamation-triangle"></i> '+cLan.Error);
+				BAlert.find('.modal-body').html('<p class="text-danger">'+cLan.Thischefnotavailable+'</p>');
+				BAlert.modal();
+				return false;
+				
+			}else{
+				$('#datetimepickerPS').data("DateTimePicker").enabledDates(enabledDates);
+				$('#datetimepickerPS').data("DateTimePicker").defaultDate( defDate );
+			}
+			
+			setTimeout(function(){ 
+				$('#popPSOrder').modal();
+				$('#StepPS1').show(); $('#btnNextPS').show();
+				$('#StepPS2').hide(); $('#btnOrderPS').hide();
+			}, 500);
+			
+		}else { 
+			BAlert.find('.modal-header h3').html('<i class="fa fa-exclamation-triangle"></i> '+cLan.Error);
+			BAlert.find('.modal-body').html('<p class="text-danger">'+data.Msg+'</p>');
+			BAlert.modal();
+		}
+		if (data.JS) { eval(data.JS); }
+		
+	}); // ajax		
+}
+
+
 
 function loadDishes(chef_id){
 	formData = 'chef_id='+chef_id+'&DishAv=1';
@@ -1194,7 +1596,7 @@ function loadDishes(chef_id){
 				DishAv = data.DishAv;
 				$DTemp = $('.food-listing2');
 				$("#total-dishes").html(data.Count);
-				var dineDishes = 0, deliveryDishes = 0;
+				var dineDishes = 0, deliveryDishes = 0, PsDishes = 0;
 				for (var i = 0; i < dishData.length; i++) {
 					$copy = $DTemp.clone().removeClass('hidden');
 					
@@ -1212,16 +1614,21 @@ function loadDishes(chef_id){
 					//$copy.find('.btnReserve').prop('data-dish', dishData[i].id );
 					$copy.find('p.dishInfo').html('Price : $'+dishData[i].price);
 					
-					if( dishData[i].availability == 1 || dishData[i].availability == 3 ) dineDishes ++;
-					if( dishData[i].availability == 2 || dishData[i].availability == 3 ) deliveryDishes ++;
+					if( dishData[i].availability & 1  ) dineDishes ++;
+					if( dishData[i].availability & 2  ) deliveryDishes ++;
+					if( dishData[i].availability & 4  ) PsDishes ++;
 					/*obRat = ratingCal( dishData[i].rating_sum, dishData[i].rating_count );
 					$copy.find('img.rating').prop('src', obRat['starImg']);
 					$copy.find('.rating_info').html( obRat['ratingTxt']+' &nbsp; '+dishData[i].rating_count+' Reviews' );*/
 				
 					$copy.appendTo('#chef-foods');
 				}
-				if( dineDishes > 0 )			$('#btnStartOrder').removeClass('disabled');
-				if( deliveryDishes > 0 )	$('#btnStartDeliveryOrder').removeClass('disabled');
+				if( dineDishes > 0 )										$('#spBtnDine').show();
+				if( deliveryDishes > 0 )								$('#spBtnDelivery').show();
+				if( PsDishes > 0 && chef_data.ps_enable == 1 )	$('#spBtnPS').show();
+				
+			
+				
 			}else{
 				$('#chef-foods').html('<center>No Dishes Found</center>');
 			}
@@ -1237,19 +1644,7 @@ function loadDishes(chef_id){
 
 
 //https://www.geodatasource.com/developers/javascript
-function distance(lat1, lon1, lat2, lon2, unit) {
-	var radlat1 = Math.PI * lat1/180
-	var radlat2 = Math.PI * lat2/180
-	var theta = lon1-lon2
-	var radtheta = Math.PI * theta/180
-	var dist = Math.sin(radlat1) * Math.sin(radlat2) + Math.cos(radlat1) * Math.cos(radlat2) * Math.cos(radtheta);
-	dist = Math.acos(dist)
-	dist = dist * 180/Math.PI
-	dist = dist * 60 * 1.1515
-	if (unit=="K") { dist = dist * 1.609344 }
-	if (unit=="N") { dist = dist * 0.8684 }
-	return dist
-}
+
 
 var ppApp = {
 	// Application Constructor

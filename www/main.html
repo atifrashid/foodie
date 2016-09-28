@@ -24,13 +24,40 @@ html, body{ height:100% }
 #ex4_content {
 	content-positioning-anchor: 50% 50%;
 }
+.main{
+	height:100%;
+	text-align:center;
+	background:url(images/s1.jpg) center center/cover no-repeat fixed;
+	position: relative;
+}
+.logo {
+	position: absolute;
+	max-width:40%;
+	left: 50%;
+	top: 50%;
+	margin-top: -50%;
+	margin-left: -20%;
+}
+.title {
+	color: #fff;
+	width: 100%;
+	text-align: center;
+	top: 50%;
+	font-size:20px;
+	position: absolute;
+	padding: 0px 60px;
+	line-height: 30px;
+	font-weight: 400;
+}
+
 </style>
 
 
 
 </head>
 <body style="background-color:#FFF;">
-<div style="height:100%; background:url(images/splash.png?) center center no-repeat">
+<div class="main">
+
 
 <div id="bottom-bar" style="padding:5px; text-align:center">
 	
@@ -47,6 +74,13 @@ Copyright (c) 2016  Foodie Systems, Inc.
 
  
 $(document).ready(function() {
+	
+	var R = window.innerWidth / window.innerHeight; 
+	console.log(R);
+	if( R > 0.8 ){
+		$('div.main').css('background-image','url(images/s2.jpg)');	
+	}
+	
     // are we running in native app or in a browser?
     window.isphone = false;
     if(document.URL.indexOf("http://") === -1 
@@ -79,8 +113,11 @@ function onShortError(error){
 			showPosition(null); 
 		}else{
 			Retries = Retries+1;
+			var ErMsg = cLan.NoGPS;
+			if(error.code == 3){ ErMsg = cLan.NoGPS3;	}
+			
 			BAlert.find('.modal-header h3').html('<i class="fa fa-exclamation-triangle"></i> GPS '+cLan.Error+' ('+error.code+')' );
-			BAlert.find('.modal-body').html('<p class="text-danger">'+cLan.NoGPS+'.</p>');
+			BAlert.find('.modal-body').html('<p class="text-danger">'+ErMsg+'.</p>');
 			BAlert.find('button.btn-primary').html('Retry').on('click',function(){
 				setTimeout(function(){ 
 					//onShortError({code:-1});
@@ -116,7 +153,7 @@ function showPosition(position) {
 			//document.location.href = './map.html';
 			//document.location.href = './register.html';
 			setTimeout(function(){ document.location = 'map.html'; }, 500);
-			//setTimeout(function(){ document.location = 'register.html'; }, 500);	
+			
 		}
 	}catch(err) {
 		alert(err.message);

@@ -22,24 +22,26 @@
 <div id="sidebar-wrapper">
 	<nav id="nav">
 		<ul class="sidebar-nav nav" id="navRight">
-			<li class="menu-heading"><strong><a href="#" data-bind="text: lang.Foodie"></a></strong></li>
-			<li><a class="sub" href="map.html" data-bind="text: lang.Chefs"></a></li>
-			<li><a class="sub" href="user-profile.html" data-bind="text: lang.MyProfile"></a></li>
-			<li><a class="sub" href="payment-options.html" data-bind="text: lang.PO"></a></li>
-			<li><a class="sub" href="reservations.html" data-bind="text: lang.MyOrders"></a></li>
-			<li><a class="sub" href="notifications.html" data-bind="text: lang.Notifications"></a></li>
-			
-			<li class="menu-heading"><strong><a data-bind="text: lang.CHEF" href="#"></a></strong></li>
-			<li class="noChef"><a class="sub" data-bind="text: lang.BecomeaChef" href="chef-profile-edit.html"></a></li>
-			<li class="isChef pChef"><a class="sub" data-bind="text: lang.ChefProfile" href="chef-profile-edit.html"></a></li>
-			<li class="isChef"><a class="sub" data-bind="text: lang.ManageDishes" href="chef-dishes.html"></a></li>
-			<li class="isChef"><a class="sub" data-bind="text: lang.Schedule" href="chef-calendar-set.html"></a></li>
-			<li class="isChef"><a class="sub" data-bind="text: lang.DeliverySchedule" href="delivery-schedule.html"></a></li>
-			<li class="isChef"><a class="sub" data-bind="text: lang.ChefReservations" href="chef-reservations.html"></a></li>
-			
-			<li><a  href="settings.html" data-bind="text: lang.Settings"></a></li>
-			<li><a href="about.html" data-bind="text: lang.AboutFudi"></a></li>
-			<li><a href="register.html?do=logout" data-bind="text: lang.Logout"></a></li>
+			<li class="L0 menu-heading"><strong><a href="#"><i class="icon-user"></i> <span data-bind="text: lang.Foodie"></span></a></strong></li>
+			<li class="L2"><a class="sub" href="map.html"><i class="icon-pointer-advice"></i> <span data-bind="text: lang.mnuChefs"></span></a></li>
+			<li class="L2"><a class="sub" href="user-profile.html"><i class="icon-user"></i> <span data-bind="text: lang.MyProfile"></span></a></li>
+			<li class="L2"><a class="sub" href="payment-options.html"><i class="icon-credit-cards"></i> <span data-bind="text: lang.PO"></span></a></li>
+			<li class="L2"><a class="sub" href="reservations.html"><i class="icon-tray"></i> <span data-bind="text: lang.MyOrders"></span></a></li>
+			<li class="L2"><a class="sub" href="notifications.html"><i class="icon-mail"></i> <span data-bind="text: lang.Notifications"></span></a></li>
+			<li class="L2"><a class="sub" href="events-list.html"><i class="fa fa-glass"></i> <span data-bind="text: lang.Events"></span></a></li>
+			<li class="L0 menu-heading"><strong><a href="#"><i class="icon-chef"></i> <span data-bind="text: lang.CHEF"></span></a></strong></li>
+			<li class="L2 noChef"><a class="sub" href="chef-profile-edit.html"><i class="icon-chef"></i> <span data-bind="text: lang.BecomeaChef"></span></a></li>
+			<li class="L2 isChef pChef"><a class="sub" href="chef-profile-edit.html"><i class="icon-chef"></i> <span data-bind="text: lang.ChefProfile"></span></a></li>
+			<li class="L2 isChef"><a class="sub" href="chef-dishes.html"><i class="icon-food"></i> <span data-bind="text: lang.ManageDishes"></span></a></li>
+			<li class="L2 isChef"><a class="sub" href="chef-calendar-set.html"><i class="icon-clock"></i> <span data-bind="text: lang.Schedule"></span></a></li>
+			<li class="L2 isChef"><a class="sub" href="delivery-schedule.html"><i class="icon-calendar"></i> <span data-bind="text: lang.DeliverySchedule"></span></a></li>
+			<li class="L2 isChef"><a class="sub" href="ps-schedule.html"><i class="icon-calendar-1"></i> <span data-bind="text: lang.PSmenu"></span></a></li>
+			<li class="L2 isChef"><a class="sub" href="chef-reservations.html"><i class="icon-reserve"></i> <span data-bind="text: lang.ChefReservations"></span></a></li>
+			<li class="L2 isChef"><a class="sub" href="chef-events.html"><i class="fa fa-glass"></i> <span data-bind="text: lang.eventResv"></span></a></li>
+			<li class="L2 isChef"><a class="sub" href="withdraw-money-chef.html"><i class="icon-withdraw"></i> <span data-bind="text: lang.WithdMon"></span></a></li>
+			<li class="L1"><a href="settings.html"><i class="icon-gear"></i> <span data-bind="text: lang.Settings"></span></a></li>
+			<li class="L1"><a href="about.html"><i class="icon-about"></i> <span data-bind="text: lang.AboutFudi"></span></a></li>
+			<li class="L1"><a href="register.html?do=logout"><i class="icon-logout"></i> <span data-bind="text: lang.Logout"></span></a></li>
 		</ul>
 	</nav>
 </div>
@@ -52,8 +54,8 @@
 	
 	<div id="chef-foods">
 		<div class="food-listing hidden">
-			<div class="food-image-cont"> <img class="img-responsive img-circle media-object pull-left" src="images/food-1.png" align="food img"> </div>
-			<div class="food-info-cont">
+			<div class="Xfood-image-cont col-xs-3 col-sm-2"> <img class="img-responsive img-circle media-object pull-left" src="images/food-1.png" align="food img"> </div>
+			<div class="Xfood-info-cont col-xs-9 col-sm-10" style="padding-left:0">
 				<div class="food-info-body">
 					<h4 class="dishTitle">...</h4>
 					<div class="byChef pull-right">..</div>
@@ -133,12 +135,10 @@
 <div id="bottom-bar">
 	<div class="container">
 		<div class="row">
-			<div class="col-xs-3 no-padding"> <a class="tab-item" href="map.html"> <img class="tab-icon " src="images/map-icon.png" alt="map-icon"> 
-				<!-- <i class="fa fa-map-o tab"></i> --> 
-				<img class="border-image" src="images/border-image.png" alt="border-image"> </a> </div>
-			<div class="col-xs-3 no-padding"> <a class="tab-item active" href="reservations.html"> <img class="tab-icon" src="images/food-icon.png" alt="food-icon"> <img class="border-image" src="images/border-image.png" alt="border-image"> </a> </div>
-			<div class="col-xs-3 no-padding"> <a class="tab-item" href="user-profile.html"> <img class="tab-icon" src="images/profile-icon.png" alt="map-icon"><img class="border-image" src="images/border-image.png" alt="border-image"> </a> </a> </div>
-			<div class="col-xs-3 no-padding"> <a class="tab-item " id="anoti" href="notifications.html"> <img class="tab-icon" src="images/notification-icon.png" alt="map-icon"> </a>	</div>
+			<div class="col-xs-3 no-padding"> <a class="tab-item " href="map.html"> <i class="icon-map"></i> </a> </div>
+				<div class="col-xs-3 no-padding"> <a class="tab-item active" href="reservations.html"> <i class="icon-bell-covering-hot-dish"></i> </a> </div>
+				<div class="col-xs-3 no-padding"> <a class="tab-item " href="user-profile.html"> <i class="icon-user-1"></i> </a> </div>
+				<div class="col-xs-3 no-padding"> <a class="tab-item " id="anoti" href="notifications.html"> <i class="icon-alarm"></i> </a>	</div>
 		</div>
 	</div>
 </div>
@@ -222,6 +222,25 @@ $(document).ready(function(e) {
 				H += cLan.Deliverycharges2 +': $'+DData.delivery_charges+'<br>';	
 			}
 			H += 'Delivery Address:<br>';
+			
+			H += DData.address+' &nbsp; <button class="btn fbtn btn-warning  btnMapLink" data-href="http://maps.google.com/maps?z=12&q=loc:'+DData.lat+'+'+DData.lng+'"><i class="fa fa-map-marker"></i></button><br/>'+DData.g_address +' ';
+			H += '</div>';
+			
+		}
+		
+		if( thisOrder.order_type == 'Personal Chef' ){
+			var DData = JSON.parse(thisOrder.delivery_data);
+			console.log(DData);
+			H += '<div class="bg-info" style="margin:5px -5px 5px -5px; padding:5px; background-color:#ffe9ee"><strong>Detailed Info:</strong><br/>';
+			if(!empty(DData.travel_charges)){
+				H += cLan.TravelCharges +': $'+DData.travel_charges.toFixed(2)+'<br>';	
+			}
+			
+			if(!empty(DData.ad_stay_charges)){
+				H += 'Additional stay: '+DData.ad_stay+' hours<br>';	
+				H += 'Additional stay charges: $'+DData.ad_stay_charges.toFixed(2)+'<br>';	
+			}
+			H += 'Address:<br>';
 			
 			H += DData.address+' &nbsp; <button class="btn fbtn btn-warning  btnMapLink" data-href="http://maps.google.com/maps?z=12&q=loc:'+DData.lat+'+'+DData.lng+'"><i class="fa fa-map-marker"></i></button><br/>'+DData.g_address +' ';
 			H += '</div>';
